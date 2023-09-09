@@ -2,14 +2,16 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<xacro:include filename="inertial_macros.xacro" />
 
-	<material name="white"> <color rgba="1 1 1 1"/> </material>
-	<material name="orange"> <color rgba="1 0.3 0.1 1"/> </material>
-	<material name="blue"> <color rgba="0.2 0.2 1 1"/> </material>
-	<material name="black"> <color rgba="0 0 0 1"/> </material>
-	<material name="red"> <color rgba="1 0 0 1"/> </material>
+	<material name="white"> <color rgba = "1 1 1 1"/> </material>
+	<material name="orange"> <color rgba = "1 0.3 0.1 1"/> </material>
+	<material name="blue"> <color rgba = "0.2 0.2 1 1"/> </material>
+	<material name="black"> <color rgba = "0 0 0 1"/> </material>
+	<material name="red"> <color rgba = "1 0 0 1"/> </material>
 
 	<!-- BASE LINK DECLARATION --> 
-	<link name="base_link" />
+	<link name="base_link">
+	
+	</link>
 
 	<!-- CHASSIS MODELING -->
 	<joint name="chassis_joint" type="fixed">
@@ -46,7 +48,7 @@
 
 	<!-- LEFT WHEELS -->
 	<joint name="left_wheel_front_joint" type="continuous">
-		<parent link="base_link"/>
+		<parent link="chassis"/>
 		<child link="left_wheel_front"/>
 		<origin xyz="0.2 0.175 -0.075" rpy="-${pi/2} 0 0"/>
 		<axis xyz="0 0 1"/>
@@ -78,7 +80,7 @@
 
 
 	<joint name="left_wheel_back_joint" type="continuous">
-		<parent link="base_link"/>
+		<parent link="chassis"/>
 		<child link="left_wheel_back"/>
 		<origin xyz="-0.2 0.175 -0.075" rpy="-${pi/2} 0 0"/>
 		<axis xyz="0 0 1"/>
@@ -109,7 +111,7 @@
 
 	<!-- RIGHT WHEELS -->
 	<joint name = "right_wheel_front_joint" type = "continuous">
-		<parent link = "base_link"/>
+		<parent link = "chassis"/>
 		<child link = "right_wheel_front"/>
 		<origin xyz = "0.2 -0.175 -0.075" rpy = "${pi/2} 0 0"/>
 		<axis xyz = "0 0 -1"/>
@@ -139,8 +141,9 @@
 	</gazebo>
 
 
+
 	<joint name="right_wheel_back_joint" type="continuous">
-		<parent link="base_link"/>
+		<parent link="chassis"/>
 		<child link="right_wheel_back"/>
 		<origin xyz="-0.2 -0.175 -0.075" rpy="${pi/2} 0 0"/>
 		<axis xyz="0 0 -1"/>
