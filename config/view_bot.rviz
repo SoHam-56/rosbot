@@ -102,11 +102,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        caster_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         chassis:
           Alpha: 1
           Show Axes: false

@@ -9,8 +9,8 @@
 	<material name="red"> <color rgba = "1 0 0 1"/> </material>
 
 	<!-- BASE LINK DECLARATION --> 
-	<link name="base_link">
-	
+	<link name="base_link" >
+		<origin xyz = "0.0 0.175 -0.075"/>
 	</link>
 
 	<!-- CHASSIS MODELING -->
@@ -48,7 +48,7 @@
 
 	<!-- LEFT WHEELS -->
 	<joint name="left_wheel_front_joint" type="continuous">
-		<parent link="chassis"/>
+		<parent link="base_link"/>
 		<child link="left_wheel_front"/>
 		<origin xyz="0.2 0.175 -0.075" rpy="-${pi/2} 0 0"/>
 		<axis xyz="0 0 1"/>
@@ -80,7 +80,7 @@
 
 
 	<joint name="left_wheel_back_joint" type="continuous">
-		<parent link="chassis"/>
+		<parent link="base_link"/>
 		<child link="left_wheel_back"/>
 		<origin xyz="-0.2 0.175 -0.075" rpy="-${pi/2} 0 0"/>
 		<axis xyz="0 0 1"/>
@@ -111,10 +111,10 @@
 
 	<!-- RIGHT WHEELS -->
 	<joint name = "right_wheel_front_joint" type = "continuous">
-		<parent link = "chassis"/>
+		<parent link = "base_link"/>
 		<child link = "right_wheel_front"/>
 		<origin xyz = "0.2 -0.175 -0.075" rpy = "${pi/2} 0 0"/>
-		<axis xyz = "0 0 -1"/>
+		<axis xyz = "0 0 1"/>
 	</joint>
 
 	<link name="right_wheel_front">
@@ -143,10 +143,10 @@
 
 
 	<joint name="right_wheel_back_joint" type="continuous">
-		<parent link="chassis"/>
+		<parent link="base_link"/>
 		<child link="right_wheel_back"/>
 		<origin xyz="-0.2 -0.175 -0.075" rpy="${pi/2} 0 0"/>
-		<axis xyz="0 0 -1"/>
+		<axis xyz="0 0 1"/>
 	</joint>
 
 	<link name="right_wheel_back">
@@ -171,34 +171,5 @@
 	<gazebo reference="right_wheel_back">
 		<material>Gazebo/Blue</material>
 	</gazebo>
-
-	<!-- CASTER WHEEL -->
-
-	<!--<joint name="caster_wheel_joint" type="fixed">
-		<parent link="chassis"/>
-		<child link="caster_wheel"/>
-		<origin xyz="0.24 0 0" rpy="0 0 0"/>
-	</joint>
-
-	<link name="caster_wheel">
-		<visual>
-			<geometry>
-				<sphere radius="0.05" />
-			</geometry>
-			<material name="black"/>
-		</visual>
-
-		<collision>
-			<geometry>
-				<sphere radius="0.05" />
-			</geometry>
-		</collision>
-	</link>
-
-	<gazebo reference="caster_wheel">
-		<material>Gazebo/Black</material>
-		<mu1 value="0.001"/>
-		<mu2 value="0.001"/>
-	</gazebo>-->
 
 </robot>
