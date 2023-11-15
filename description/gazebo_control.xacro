@@ -4,8 +4,8 @@
 	<gazebo>
 		<plugin name = 'diff_drive' filename = 'libgazebo_ros_diff_drive.so'>
 
-
-			<!-- Wheel Information -->
+			<num_wheel_pairs>2</num_wheel_pairs>
+			
 			<left_joint>
 				left_wheel_front_joint
 				left_wheel_back_joint
@@ -17,15 +17,15 @@
 			</right_joint>
 
 			<wheel_separation>0.35</wheel_separation>
-			<wheel_diameter>0.1</wheel_diameter>
+			<wheel_diameter>0.6</wheel_diameter>
 
 
-			<!-- Limits -->
+			
 			<max_wheel_torque>200</max_wheel_torque>
-			<max_wheel_acceleration>10.0</max_wheel_acceleration>
+			<max_wheel_acceleration>100.0</max_wheel_acceleration>
 
 
-			<!-- Output -->
+			
 			<odometry_frame>odom</odometry_frame>
 			<robot_base_frame>base_link</robot_base_frame>
 
@@ -36,5 +36,28 @@
 
 		</plugin>
 	</gazebo>
+
+	<!-- <gazebo>
+
+		<plugin name = "skid_steer_drive_controller" filename = "libgazebo_ros_skid_steer_drive.so">
+
+			<updateRate>30.0</updateRate>
+			<robotNamespace>/</robotNamespace>
+
+			<leftFrontJoint>front_left_wheel_joint</leftFrontJoint>
+			<rightFrontJoint>front_right_wheel_joint</rightFrontJoint>
+			<leftRearJoint>back_left_wheel_joint</leftRearJoint>
+			<rightRearJoint>back_right_wheel_joint</rightRearJoint>
+
+			<wheelSeparation>0.35</wheelSeparation>
+			<wheelDiameter>0.6</wheelDiameter>
+			
+			<robotBaseFrame>base_link</robotBaseFrame>
+			<torque>200</torque>
+			<topicName>cmd_vel</topicName>
+			<broadcastTF>false</broadcastTF>
+		</plugin>
+
+	</gazebo> -->
 
 </robot>
